@@ -1,0 +1,22 @@
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<script src="{{ site.asset_path }}/js/bundle.modernizr.min.js"></script>
+	<title>{{ site.title }}</title>
+	<link href="{{ site.asset_path }}/css/appc84985.min.css" rel="stylesheet">
+
+	<!-- Search Engine Optimization -->
+
+
+	<meta name="description" content="{{ site.description | strip_newlines }}">
+  	{% if site.google_site_verification %}<meta name="google-site-verification" content="{{ site.google_site_verification}}">{% endif %}
+	{% if site.bing_webmastertools_id %}<meta name="msvalidate.01" content="{{ site.bing_webmastertools_id }}" >{% endif %}
+	{% if site.google_author %}<link rel="author" href="{{ site.google_author }}">{% endif %}
+	{% if site.alexa_verify_id %}<meta name="alexaVerifyID" content="{{ site.alexa_verify_id }}">{% endif %}
+	{% if page.noindex == true %}<meta name="robots" content="noindex">{% endif %}
+
+
+	{%	include _favicon.html %}
+
+	{% unless page.style == NULL %}
+	<style type="text/css">{{ page.style }}</style>
+	{% endunless %}

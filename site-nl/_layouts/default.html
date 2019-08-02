@@ -1,0 +1,37 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<!--[if IE 8]>
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+<html class="no-js" lang="nl" xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl">
+<!--
+<![endif]-->
+
+<head>
+	<title>My pop-up title - nl</title>
+	{% include _head.html %}
+</head>
+
+<body id="top-of-page">
+	<div class="grid-container">
+
+	{% include _federal_header.html %}
+
+	{% include _navigation.html %}
+
+	{% include _banner.html %}
+
+	{{ content }}
+
+	<footer>
+      <hr class="rule-style1">
+		{% include _footer.html %}
+	 </footer>
+	</div>
+	{% include _footer_scripts.html %}
+
+</body>
+</html>

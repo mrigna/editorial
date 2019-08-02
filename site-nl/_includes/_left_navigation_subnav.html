@@ -1,0 +1,37 @@
+        {% assign links = site.data.left_menu %}
+         {% capture main_title %}
+    	    {% if page.subnav == nil and page.parent == nil %}
+    		    {{ page.title  | capitalize }}
+    	    {% else %}
+    		    {% if target_group != true %}
+    			    {% if page.parent == nil %}
+    			       {{ page.title  | capitalize}}
+    			    {% else %}
+    			        {% if page.subnav == nil %}
+        			    {% capture label %}{{ page.parent  | capitalize }}{% endcapture %}
+        			    {{ label }}
+        			    {% else %}
+        			    {{ page.title  | capitalize }}
+        			    {% endif %}
+                    {% endif %}
+                {% endif %}
+    	  {% endif %}
+         {% endcapture %}
+<div class="cell medium-3 large-3">       
+        <div class="subheader"><span class="label secondary">{{ main_title }}</span></div>
+        <hr class="rule-style1"/>
+            {% if page.target_group == true %}
+                  {% capture name_menu %}{%if page.subnav != nil %}{{ page.title | downcase }}{% else %}{{ page.parent }}{% endif %}{% endcapture %}
+            {% else %}
+                  {% capture name_menu %}{%if page.subnav != nil %}{{ page.permalink | replace: '/', '' }}{% else %}{{ page.parent }}{% endif %}{% endcapture %}
+            {% endif %} 
+     <div class="vertical menu">
+            {% for link in links[name_menu] %}
+              <li>
+                <a href="{%if page.subnav != nil %}{{ site.baseurl }}{{ page.url }}{{ link.url }}{% else %}{{ link.url }}{% endif %}">
+                  {% capture label %}{{ link["name"] }}{%endcapture%}
+                  {{ label | capitalize  }}
+                </a>
+              </li>
+            {% endfor %}
+     </div>

@@ -1,0 +1,17 @@
+  {% if p.url contains "health-professionals" %}
+  <li class="{{ class }} has-submenu"><a href="#">Gezondheidszorgverleners</a>
+                <ul class="submenu menu vertical" data-submenu>
+                  <li><a href="{{ site.baseurl }}{{ p.url }}doctors">Artsen</a></li>
+                  <li><a href="group2">groep2</a></li>
+                  <li><a href="group3">groep3</a></li>
+                  <li><a href="group4">groep4</a></li>
+                  <li><a href="group5">groep5</a></li>
+                </ul>
+              </li>
+
+  {% elsif p.url contains "citizens" %}
+  <li class="{{ class }}"><a href="{{ site.baseurl }}{{ p.url }}">Burgers</a></li>
+  
+  {% elsif p.url contains "companies" %}
+  <li class="{{ class }}"><a href="{{ site.baseurl }}{{ p.url }}">Ondernemingen</a></li>
+  {% endif %}
