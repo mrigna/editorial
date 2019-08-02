@@ -1,0 +1,20 @@
+
+ {% if page.parent != nil or page.subnav != nil or page.target_group == true %}
+       {% include _left_navigation_subnav.html %}
+ {% else %}
+     <div class="cell medium-3 large-3">
+    	<div class="subheader"><span class="label secondary">{{ page.title }}</span></div>
+        <hr class="rule-style1"/>
+       {% if page.anchors != nil %}
+       <div class="vertical menu">
+         {% for a in page.anchors %}
+         {% capture anchor %}anchor{{ forloop.index }}{% endcapture %}
+          <li>
+             {% capture label %}{{ a [anchor]}}{% endcapture %}
+            <a href="#{{ anchor }}">{{ label }}</a>
+         </li>
+         {% endfor %}
+        </div>
+       {% endif %}
+    {% endif %}
+    </div>

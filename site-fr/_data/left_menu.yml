@@ -1,0 +1,10 @@
+thème1:
+- name: topic1
+  url: topic1
+- name: topic2
+  url: topic2
+médecins:
+- name: médecins topic1
+  url: topic1
+- name: médecins topic2
+  url: topic2

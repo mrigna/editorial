@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="grid-x grid-padding-x grid-padding-y">
+	<div class="large-9 medium-9 cell">
+		<div class="module">
+		  <div class="module-content blog-list">
+		     {% unless page.index == true%}
+        	 <div class="blog-post">
+        	 <div class="submitted"><span class="blue">{{ page.date | date_to_string }}</span></div>
+        	 {% endunless %}
+        	 
+             {{ content }}
+            </div>
+            {% unless page.index == true%}
+            </div>
+            {% endunless %}
+          </div>
+ </div>     
+      {% include _side_bar.html %}
+    
+</div>
